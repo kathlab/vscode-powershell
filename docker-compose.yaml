@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  powershell:
+    # user: "${UID}:${GID}" # default user within container
+    image: local/vscodepowershell:latest
+    container_name: vscodepowershell
+    # command: /bin/sh -c "while sleep 1000; do :; done" # keep container open while running
+    command: bash
+    stdin_open: true
+    tty: true
+    volumes:
+      - type: bind
+        source: ./
+        target: /workspaces/vscode-powershell # vscode workspace folder
+
+      # store vscode extensions to avoid to reinstall every time the container is created anew
+      - type: bind
+        source: ./vscode-container-ext/.vscode-server
+        target: /home/vscode/.vscode-server
+      - type: bind
+        source: ./vscode-container-ext/.vscode-server-insiders
+        target: /home/vscode/.vscode-server-insiders
