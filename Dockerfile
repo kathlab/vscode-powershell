@@ -18,7 +18,7 @@ RUN mkdir /home/vscode/.vscode-server-insiders
 RUN chown vscode:vscode /home/vscode/.vscode-server
 RUN chown vscode:vscode /home/vscode/.vscode-server-insiders
 
-WORKDIR /workspaces
+WORKDIR /workspaces/${PROJECT}
 
 ## volumes
 

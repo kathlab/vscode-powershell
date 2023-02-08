@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "PowerShell: Launch Script",
+            "name": "PowerShell: hello",
             "type": "PowerShell",
             "request": "launch",
             "script": "${workspaceFolder}/powershell/hello.ps1",
-            "args": []
+            "args": ["PowerShell"]
         }
     ]
 }
